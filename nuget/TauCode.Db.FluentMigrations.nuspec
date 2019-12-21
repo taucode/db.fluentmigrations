@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Db.FluentMigrations</id>
-    <version>1.0.0.0-dev-2019-12-21-23-05</version>
+    <version>1.0.0.0-dev-2019-12-21-23-23</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -15,7 +15,7 @@
     <tags>taucode db database migration</tags>
     <dependencies>
       <dependency id="FluentMigrator.Runner" version="3.2.1" />
-      <dependency id="TauCode.Db" version="1.0.0-dev-2019-12-21-21-49" />
+      <dependency id="TauCode.Db" version="1.0.0-dev-2019-12-21-23-17" />
     </dependencies>
   </metadata>
   <files>

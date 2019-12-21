@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentMigrator.Runner" Version="3.2.1" />
-    <PackageReference Include="TauCode.Db" Version="1.0.0-dev-2019-12-21-21-49" />
+    <PackageReference Include="TauCode.Db" Version="1.0.0-dev-2019-12-21-23-17" />
   </ItemGroup>
 
 </Project>
