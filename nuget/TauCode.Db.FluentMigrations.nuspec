@@ -10,12 +10,12 @@
     <projectUrl>https://github.com/taucode/taucode.db</projectUrl>
     <description>Support library for fluent migrations</description>
     <releaseNotes>
-      Moving to nuget.org
+      Updated references to TauCode.Db.
     </releaseNotes>
     <tags>taucode db database migration</tags>
     <dependencies>
       <dependency id="FluentMigrator.Runner" version="3.2.1" />
-      <dependency id="TauCode.Db" version="1.0.0-dev-2019-12-21-23-17" />
+      <dependency id="TauCode.Db" version="1.0.0-dev-2020-01-21-13-49" />
     </dependencies>
   </metadata>
   <files>
