@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TauCode.Db.FluentMigrations</id>
+    <version>1.0.0.0-dev-2020-01-21-15-46</version>
+    <authors>TauCode</authors>
+    <owners>TauCode</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/taucode/taucode.db</projectUrl>
+    <description>Support library for fluent migrations</description>
+    <releaseNotes>
+      Updated references to TauCode.Db.
+    </releaseNotes>
+    <tags>taucode db database migration</tags>
+    <dependencies>
+      <dependency id="FluentMigrator.Runner" version="3.2.1" />
+      <dependency id="TauCode.Db" version="1.0.0-dev-2020-01-21-13-49" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\LICENSE.txt" target="" />
+    <file src="..\src\TauCode.Db.FluentMigrations\bin\Release\netstandard2.0\TauCode.Db.FluentMigrations.dll" target="lib\netstandard2.0" />
+    <file src="..\src\TauCode.Db.FluentMigrations\bin\Release\netstandard2.0\TauCode.Db.FluentMigrations.pdb" target="lib\netstandard2.0" />
+  </files>
+</package>

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{4C530605-226B-4EA0-9D4B-FCCF912899EB}"
+	ProjectSection(SolutionItems) = preProject
+		misc\changelog.txt = misc\changelog.txt
+		misc\todo.txt = misc\todo.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{B2628A5B-2E1B-499B-A85F-1FDAD35C2E39}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\TauCode.Db.FluentMigrations.nuspec = nuget\TauCode.Db.FluentMigrations.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12EE04A4-E88E-43CF-AEFF-99473BDCF128}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{07CEBB47-9DC7-44CD-A33F-0ACA58183742}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TauCode.Db.FluentMigrations", "src\TauCode.Db.FluentMigrations\TauCode.Db.FluentMigrations.csproj", "{AB284B69-3FE1-4247-89FE-748A7B67A65E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TauCode.Db.FluentMigrations.Tests", "tests\TauCode.Db.FluentMigrations.Tests\TauCode.Db.FluentMigrations.Tests.csproj", "{1084D99A-4679-4D6C-985B-2AD7CF7E0B0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB284B69-3FE1-4247-89FE-748A7B67A65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB284B69-3FE1-4247-89FE-748A7B67A65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB284B69-3FE1-4247-89FE-748A7B67A65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB284B69-3FE1-4247-89FE-748A7B67A65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1084D99A-4679-4D6C-985B-2AD7CF7E0B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1084D99A-4679-4D6C-985B-2AD7CF7E0B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1084D99A-4679-4D6C-985B-2AD7CF7E0B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1084D99A-4679-4D6C-985B-2AD7CF7E0B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB284B69-3FE1-4247-89FE-748A7B67A65E} = {12EE04A4-E88E-43CF-AEFF-99473BDCF128}
+		{1084D99A-4679-4D6C-985B-2AD7CF7E0B0D} = {07CEBB47-9DC7-44CD-A33F-0ACA58183742}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1F1EA79-DC5D-42E5-A129-324B596403BA}
+	EndGlobalSection
+EndGlobal
