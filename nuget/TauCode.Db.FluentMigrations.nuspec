@@ -15,7 +15,7 @@
     <tags>taucode db database migration</tags>
     <dependencies>
       <dependency id="FluentMigrator.Runner" version="3.2.1" />
-      <dependency id="TauCode.Db" version="1.0.0-dev-2020-01-21-13-49" />
+      <dependency id="TauCode.Db" version="1.0.0-dev-2020-01-27-11-08" />
     </dependencies>
   </metadata>
   <files>
