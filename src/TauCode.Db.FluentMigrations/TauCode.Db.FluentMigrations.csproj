@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentMigrator.Runner" Version="3.2.1" />
-    <PackageReference Include="TauCode.Db" Version="1.0.0-dev-2020-01-27-11-08" />
+    <PackageReference Include="TauCode.Db" Version="1.0.0-dev-2020-03-15-21-40" />
   </ItemGroup>
 
 </Project>
