@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Db.FluentMigrations</id>
-    <version>1.3.2-dev-2020-09-24-00-20</version>
+    <version>1.3.2-dev-2020-10-05-15-00</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,13 +10,20 @@
     <projectUrl>https://github.com/taucode/taucode.db</projectUrl>
     <description>Support library for fluent migrations</description>
     <releaseNotes>
-      Migrating to Azure DevOps.
+      Added migration support for multiple DB providers:
+      * MySQL;
+      * PostgreSQL;
+      * SQL Server;
+      * SQLite.
     </releaseNotes>
     <tags>taucode db database migration</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.1">
         <dependency id="FluentMigrator.Runner" version="3.2.9" />
-        <dependency id="TauCode.Db" version="1.3.2-dev-2020-09-24-00-13" />
+        <dependency id="TauCode.Db.MySql" version="1.3.2-dev-2020-10-05-14-04" />
+        <dependency id="TauCode.Db.Npgsql" version="1.3.2-dev-2020-10-05-14-28" />
+        <dependency id="TauCode.Db.SqlClient" version="1.3.2-dev-2020-10-05-14-33" />
+        <dependency id="TauCode.Db.SQLite" version="1.3.2-dev-2020-10-05-14-40" />
       </group>
     </dependencies>
   </metadata>
