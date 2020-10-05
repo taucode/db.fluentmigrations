@@ -4,6 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using TauCode.Db.MySql;
+using TauCode.Db.Npgsql;
+using TauCode.Db.SqlClient;
+using TauCode.Db.SQLite;
 
 namespace TauCode.Db.FluentMigrations
 {
@@ -57,7 +61,30 @@ namespace TauCode.Db.FluentMigrations
         #region IUtility Members
 
         public IDbConnection Connection => null;
-        public IUtilityFactory Factory => null;
+
+        public IDbUtilityFactory Factory
+        {
+            get
+            {
+                switch (this.DbProviderName)
+                {
+                    case DbProviderNames.MySQL:
+                        return MySqlUtilityFactory.Instance;
+
+                    case DbProviderNames.PostgreSQL:
+                        return NpgsqlUtilityFactory.Instance;
+
+                    case DbProviderNames.SQLServer:
+                        return SqlUtilityFactory.Instance;
+
+                    case DbProviderNames.SQLite:
+                        return SQLiteUtilityFactory.Instance;
+
+                    default:
+                        throw new NotSupportedException($"DB provider '{this.DbProviderName}' is not supported.");
+                }
+            }
+        }
 
         #endregion
 
@@ -96,8 +123,16 @@ namespace TauCode.Db.FluentMigrations
                             rb.AddSQLite();
                             break;
 
-                        case DbProviderNames.SqlServer:
+                        case DbProviderNames.SQLServer:
                             rb.AddSqlServer();
+                            break;
+
+                        case DbProviderNames.PostgreSQL:
+                            rb.AddPostgres();
+                            break;
+
+                        case DbProviderNames.MySQL:
+                            rb.AddMySql5();
                             break;
 
                         default:
@@ -126,6 +161,8 @@ namespace TauCode.Db.FluentMigrations
                 runner.MigrateUp();
             }
         }
+
+      //  public string Schema { get; }
 
         #endregion
     }
