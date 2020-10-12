@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Db.FluentMigrations</id>
-    <version>1.3.2-dev-2020-10-05-17-29</version>
+    <version>1.3.2.1-dev-2020-10-12-07-36</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,10 +20,10 @@
     <dependencies>
       <group targetFramework=".NETStandard2.1">
         <dependency id="FluentMigrator.Runner" version="3.2.9" />
-        <dependency id="TauCode.Db.MySql" version="1.3.2-dev-2020-10-05-16-47" />
-        <dependency id="TauCode.Db.Npgsql" version="1.3.2-dev-2020-10-05-17-00" />
-        <dependency id="TauCode.Db.SqlClient" version="1.3.2-dev-2020-10-05-17-14" />
-        <dependency id="TauCode.Db.SQLite" version="1.3.2-dev-2020-10-05-17-19" />
+        <dependency id="TauCode.Db.MySql" version="1.3.2.1-dev-2020-10-11-22-56" />
+        <dependency id="TauCode.Db.Npgsql" version="1.3.2.1-dev-2020-10-11-22-35" />
+        <dependency id="TauCode.Db.SqlClient" version="1.3.2.1-dev-2020-10-11-22-26" />
+        <dependency id="TauCode.Db.SQLite" version="1.3.2.1-dev-2020-10-12-06-54" />
       </group>
     </dependencies>
   </metadata>
