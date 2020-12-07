@@ -4,10 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using TauCode.Db.MySql;
-using TauCode.Db.Npgsql;
-using TauCode.Db.SqlClient;
-using TauCode.Db.SQLite;
 
 namespace TauCode.Db.FluentMigrations
 {
@@ -21,12 +17,15 @@ namespace TauCode.Db.FluentMigrations
 
         #region Constructor
 
-        public FluentDbMigrator(string dbProviderName, string connectionString, Assembly migrationsAssembly)
+        public FluentDbMigrator(string dbProviderName, string connectionString, string schemaName, Assembly migrationsAssembly)
         {
             this.DbProviderName = dbProviderName;
             this.ConnectionString = connectionString;
+            this.SchemaName = schemaName;
             this.MigrationsAssembly = migrationsAssembly;
             _singletons = new Dictionary<Type, object>();
+
+            this.AddSingleton(typeof(ISchemaNameContainer), new SchemaNameContainer(this.SchemaName));
         }
 
         #endregion
@@ -62,29 +61,7 @@ namespace TauCode.Db.FluentMigrations
 
         public IDbConnection Connection => null;
 
-        public IDbUtilityFactory Factory
-        {
-            get
-            {
-                switch (this.DbProviderName)
-                {
-                    case DbProviderNames.MySQL:
-                        return MySqlUtilityFactory.Instance;
-
-                    case DbProviderNames.PostgreSQL:
-                        return NpgsqlUtilityFactory.Instance;
-
-                    case DbProviderNames.SQLServer:
-                        return SqlUtilityFactory.Instance;
-
-                    case DbProviderNames.SQLite:
-                        return SQLiteUtilityFactory.Instance;
-
-                    default:
-                        throw new NotSupportedException($"DB provider '{this.DbProviderName}' is not supported.");
-                }
-            }
-        }
+        public IDbUtilityFactory Factory => null;
 
         #endregion
 
@@ -156,13 +133,12 @@ namespace TauCode.Db.FluentMigrations
             {
                 // Instantiate the runner
                 var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
-
                 // Execute the migrations
                 runner.MigrateUp();
             }
         }
 
-      //  public string Schema { get; }
+        public string SchemaName { get; }
 
         #endregion
     }
