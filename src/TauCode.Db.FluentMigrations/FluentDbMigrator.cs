@@ -1,4 +1,5 @@
 ﻿using FluentMigrator.Runner;
+using FluentMigrator.Runner.VersionTableInfo;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,48 @@ namespace TauCode.Db.FluentMigrations
 {
     public class FluentDbMigrator : IDbMigrator
     {
+        #region Constants
+
+        protected const string DefaultVersionTableName = "VersionInfo";
+        protected const string DefaultVersionTableVersionColumnName = "Version";
+        protected const string DefaultVersionTableDescriptionColumnName = "Description";
+        protected const string DefaultVersionTableUniqueIndexName = "UC_Version";
+        protected const string DefaultVersionTableAppliedOnColumnName = "AppliedOn";
+
+        #endregion
+
+        #region Nested
+
+        protected class VersionTableMetaData : IVersionTableMetaData
+        {
+            public VersionTableMetaData(
+                string schemaName,
+                string tableName = DefaultVersionTableName,
+                string columnName = DefaultVersionTableVersionColumnName,
+                string descriptionColumnName = DefaultVersionTableDescriptionColumnName,
+                string uniqueIndexName = DefaultVersionTableUniqueIndexName,
+                string appliedOnColumnName = DefaultVersionTableAppliedOnColumnName)
+            {
+                this.SchemaName = schemaName;
+                this.TableName = tableName;
+                this.ColumnName = columnName;
+                this.DescriptionColumnName = descriptionColumnName;
+                this.UniqueIndexName = uniqueIndexName;
+                this.AppliedOnColumnName = appliedOnColumnName;
+            }
+
+            public object ApplicationContext { get; set; }
+            public bool OwnsSchema => false;
+            public string SchemaName { get; }
+            public string TableName { get; }
+            public string ColumnName { get; }
+            public string DescriptionColumnName { get; }
+            public string UniqueIndexName { get; }
+            public string AppliedOnColumnName { get; }
+        }
+
+        #endregion
+
         #region Fields
 
         private readonly Dictionary<Type, object> _singletons;
@@ -67,7 +110,7 @@ namespace TauCode.Db.FluentMigrations
 
         #region IDbMigrator Members
 
-        public void Migrate()
+        public virtual void Migrate()
         {
             if (string.IsNullOrWhiteSpace(this.ConnectionString))
             {
@@ -121,11 +164,20 @@ namespace TauCode.Db.FluentMigrations
                         .WithGlobalConnectionString(this.ConnectionString)
                         // Define the assembly containing the migrations
                         .ScanIn(this.MigrationsAssembly).For.Migrations();
+
+                    if (this.SchemaName != null)
+                    {
+                        var versionTableMetaData = this.CreateVersionTableMetaData();
+
+                        rb.WithVersionTable(versionTableMetaData);
+                    }
                 })
                 // Enable logging to console in the FluentMigrator way
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 // Build the service provider
                 .BuildServiceProvider(false);
+
+
 
             // Put the database update into a scope to ensure
             // that all resources will be disposed.
@@ -136,6 +188,12 @@ namespace TauCode.Db.FluentMigrations
                 // Execute the migrations
                 runner.MigrateUp();
             }
+        }
+
+        protected virtual IVersionTableMetaData CreateVersionTableMetaData()
+        {
+            IVersionTableMetaData versionTableMetaData = new VersionTableMetaData(this.SchemaName);
+            return versionTableMetaData;
         }
 
         public string SchemaName { get; }
