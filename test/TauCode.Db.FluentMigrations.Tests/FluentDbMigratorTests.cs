@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 using NUnit.Framework;
+using TauCode.Db.Extensions;
 using TauCode.Db.FluentMigrations.Tests.DbMigrations;
-using TauCode.Db.Lab.Extensions;
 using TauCode.Db.Npgsql;
 
 namespace TauCode.Db.FluentMigrations.Tests
@@ -19,7 +19,7 @@ namespace TauCode.Db.FluentMigrations.Tests
             connection.Open();
 
             var schemaExplorer = new NpgsqlSchemaExplorer(connection);
-            schemaExplorer.DropAllTablesLab("zeta");
+            schemaExplorer.DropAllTables("zeta");
 
             // Act
             var migrator = new FluentDbMigrator(DbProviderNames.PostgreSQL, ConnectionString, "zeta", typeof(M0_Baseline).Assembly);

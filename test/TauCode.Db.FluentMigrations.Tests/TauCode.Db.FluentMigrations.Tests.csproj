@@ -12,12 +12,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
-    <PackageReference Include="TauCode.Db.Npgsql" Version="1.3.2.7-dev-2021-04-03-19-56" />
+    <PackageReference Include="TauCode.Db.Npgsql" Version="1.3.2.7-dev-2021-04-22-21-47" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\TauCode.Db.FluentMigrations\TauCode.Db.FluentMigrations.csproj" />
-    <ProjectReference Include="..\..\tau-lab\TauCode.Db.Lab\TauCode.Db.Lab.csproj" />
     <ProjectReference Include="..\TauCode.Db.FluentMigrations.Tests.DbMigrations\TauCode.Db.FluentMigrations.Tests.DbMigrations.csproj" />
   </ItemGroup>
 
