@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29609.76
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{4C530605-226B-4EA0-9D4B-FCCF912899EB}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,10 +23,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{E4627792-55EE-48E8-810D-EA23C1D3CBB5}"
 	ProjectSection(SolutionItems) = preProject
 		build\azure-pipelines-dev.yml = build\azure-pipelines-dev.yml
-		build\azure-pipelines.yml = build\azure-pipelines.yml
+		build\azure-pipelines-main.yml = build\azure-pipelines-main.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TauCode.Db.FluentMigrations.Tests", "test\TauCode.Db.FluentMigrations.Tests\TauCode.Db.FluentMigrations.Tests.csproj", "{9C7AEA54-0D62-4EB4-8E26-52A5F045A69C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TauCode.Db.FluentMigrations.Tests.DbMigrations", "test\TauCode.Db.FluentMigrations.Tests.DbMigrations\TauCode.Db.FluentMigrations.Tests.DbMigrations.csproj", "{CCD02CDB-39F5-439C-BE7D-0C61FB848BAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{9C7AEA54-0D62-4EB4-8E26-52A5F045A69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7AEA54-0D62-4EB4-8E26-52A5F045A69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C7AEA54-0D62-4EB4-8E26-52A5F045A69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD02CDB-39F5-439C-BE7D-0C61FB848BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD02CDB-39F5-439C-BE7D-0C61FB848BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD02CDB-39F5-439C-BE7D-0C61FB848BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD02CDB-39F5-439C-BE7D-0C61FB848BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AB284B69-3FE1-4247-89FE-748A7B67A65E} = {12EE04A4-E88E-43CF-AEFF-99473BDCF128}
 		{9C7AEA54-0D62-4EB4-8E26-52A5F045A69C} = {07CEBB47-9DC7-44CD-A33F-0ACA58183742}
+		{CCD02CDB-39F5-439C-BE7D-0C61FB848BAF} = {07CEBB47-9DC7-44CD-A33F-0ACA58183742}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1F1EA79-DC5D-42E5-A129-324B596403BA}
