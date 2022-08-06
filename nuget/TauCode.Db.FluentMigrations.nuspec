@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Db.FluentMigrations</id>
-    <version>1.5.0-alpha.1.2022-08-06.10-29</version>
+    <version>1.5.1-alpha.1.2022-08-06.10-29</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -13,7 +13,7 @@
       Support library for fluent migrations
     </description>
     <releaseNotes>
-      Developing release 1.5.0.
+      Developing release 1.5.1.
     </releaseNotes>
     <tags>taucode db fluent database migration</tags>
     <dependencies>
