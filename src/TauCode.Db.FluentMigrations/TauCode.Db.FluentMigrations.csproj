@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentMigrator.Runner" Version="3.3.2" />
-    <PackageReference Include="TauCode.Db" Version="1.5.0" />
+    <PackageReference Include="TauCode.Db" Version="1.7.0" />
   </ItemGroup>
 
 </Project>

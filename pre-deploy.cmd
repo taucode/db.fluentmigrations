@@ -1,9 +1,9 @@
 dotnet restore
 
-dotnet build --configuration Debug
-dotnet build --configuration Release
+dotnet build TauCode.Db.FluentMigrations.sln -c Debug
+dotnet build TauCode.Db.FluentMigrations.sln -c Release
 
-dotnet test -c Debug .\test\TauCode.Db.FluentMigrations.Tests\TauCode.Db.FluentMigrations.Tests.csproj
-dotnet test -c Release .\test\TauCode.Db.FluentMigrations.Tests\TauCode.Db.FluentMigrations.Tests.csproj
+dotnet test TauCode.Db.FluentMigrations.sln -c Debug
+dotnet test TauCode.Db.FluentMigrations.sln -c Release
 
 nuget pack nuget\TauCode.Db.FluentMigrations.nuspec
