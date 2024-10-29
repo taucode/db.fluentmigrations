@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
+/*
+// todo
 namespace TauCode.Db.FluentMigrations
 {
     public class FluentDbMigrator : IDbMigrator
@@ -201,3 +203,5 @@ namespace TauCode.Db.FluentMigrations
         #endregion
     }
 }
+
+*/
