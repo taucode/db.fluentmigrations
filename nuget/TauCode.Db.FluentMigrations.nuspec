@@ -2,29 +2,31 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Db.FluentMigrations</id>
-    <version>1.7.1-alpha.1.2023-02-06.10-47</version>
+    <version>2.0.1-alpha.1.2024-10-29.10-11</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE</license>
     <projectUrl>https://github.com/taucode/taucode.db</projectUrl>
     <repository type="git" url="https://github.com/taucode/taucode.db"/>
+    <readme>README.md</readme>
     <description>
       Support library for fluent migrations
     </description>
     <releaseNotes>
-      Developing release 1.7.1.
+      Developing release 2.0.1.
     </releaseNotes>
     <tags>taucode db fluent database migration</tags>
     <dependencies>
-      <group targetFramework=".NETCoreApp6.0">
-        <dependency id="FluentMigrator.Runner" version="3.3.2" />
-        <dependency id="TauCode.Db" version="1.7.0" />
+      <group targetFramework="net8.0">
+        <dependency id="FluentMigrator.Runner" version="6.2.0" />
+        <dependency id="TauCode.Db" version="2.0.1" />
       </group>
     </dependencies>
   </metadata>
   <files>
+    <file src="..\README.md" target="" />
     <file src="..\LICENSE*" target="" />
-    <file src="..\src\TauCode.Db.FluentMigrations\bin\Release\net6.0\TauCode.Db.FluentMigrations.dll" target="lib\net6.0" />
+    <file src="..\src\TauCode.Db.FluentMigrations\bin\Release\net8.0\TauCode.Db.FluentMigrations.dll" target="lib\net8.0" />
   </files>
 </package>

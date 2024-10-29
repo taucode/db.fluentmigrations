@@ -1,2 +1,2 @@
-# taucode.db.fluentmigrations
+# db.fluentmigrations
 Support library for fluent migrations
